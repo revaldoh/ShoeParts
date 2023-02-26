@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shoeparts</title>
+  <title>Beans Coffe</title>
 
    <!-- Google Font: Source Sans Pro -->
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -21,7 +21,7 @@
         <div class="container">
           <a href="../../index3.html" class="navbar-brand">
             <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Shoeparts</span>
+            <span class="brand-text font-weight-light">E-Commerce</span>
           </a>
 
           <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,78 +34,21 @@
               <li class="nav-item">
                 <a href="{{route('home')}}" class="nav-link">Home</a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Contact</a>
-              </li>
               <li class="nav-item dropdown">
                 <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Product</a>
                 <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
-                    <!-- Level two dropdown-->
+                  <!-- halaman class product -->
                     <li class="dropdown-submenu dropdown-hover">
-                        <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Vans</a>
-                        <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
-                        <li>
-                            <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
-                        </li>
-                        <!-- Level three dropdown-->
-                        <li class="dropdown-submenu">
-                            <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
-                            <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
-                            <li><a href="#" class="dropdown-item">3rd level</a></li>
-                            <li><a href="#" class="dropdown-item">3rd level</a></li>
-                            </ul>
-                        </li>
-                        <!-- End Level three -->
-
-                        <li><a href="#" class="dropdown-item">level 2</a></li>
-                        <li><a href="#" class="dropdown-item">level 2</a></li>
-                        </ul>
+                        <a  href="{{route('classproduct')}}"  class="dropdown-item">Class Product</a>
                     </li>
-                    <!-- End Level two -->
-                    <!-- Level two dropdown-->
+                    <!-- halaman group product -->
                     <li class="dropdown-submenu dropdown-hover">
-                        <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Adidas</a>
-                        <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
-                        <li>
-                            <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
-                        </li>
-                        <!-- Level three dropdown-->
-                        <li class="dropdown-submenu">
-                            <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
-                            <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
-                            <li><a href="#" class="dropdown-item">3rd level</a></li>
-                            <li><a href="#" class="dropdown-item">3rd level</a></li>
-                            </ul>
-                        </li>
-                        <!-- End Level three -->
-
-                        <li><a href="#" class="dropdown-item">level 2</a></li>
-                        <li><a href="#" class="dropdown-item">level 2</a></li>
-                        </ul>
+                        <a  href="{{route('groupproduct')}}"  class="dropdown-item">Group Product</a>
                     </li>
-                    <!-- End Level two -->
-                    <!-- Level two dropdown-->
+                    <!-- Halaman Product -->
                     <li class="dropdown-submenu dropdown-hover">
-                        <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Nike</a>
-                        <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
-                        <li>
-                            <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
-                        </li>
-                        <!-- Level three dropdown-->
-                        <li class="dropdown-submenu">
-                            <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
-                            <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
-                            <li><a href="#" class="dropdown-item">3rd level</a></li>
-                            <li><a href="#" class="dropdown-item">3rd level</a></li>
-                            </ul>
-                        </li>
-                        <!-- End Level three -->
-
-                        <li><a href="#" class="dropdown-item">level 2</a></li>
-                        <li><a href="#" class="dropdown-item">level 2</a></li>
-                        </ul>
+                        <a  href="{{route('product')}}"  class="dropdown-item">Product</a>
                     </li>
-                    <!-- End Level two -->
                 </ul>
               </li>
             </ul>
@@ -158,6 +101,7 @@
           <div class="container">
             <div class="row">
                 @yield('content')
+      
             </div>
             <!-- /.row -->
           </div><!-- /.container-fluid -->
@@ -195,4 +139,49 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
     </body>
+    <script>
+  
+$(function () {
+  $.validator.setDefaults({
+    submitHandler: function () {
+      alert( "Form successful submitted!" );
+    }
+  });
+  $('#quickForm').validate({
+    rules: {
+      email: {
+        required: true,
+        email: true,
+      },
+      password: {
+        required: true,
+        minlength: 5
+      },
+ 
+    },
+    messages: {
+      email: {
+        required: "Please enter a email address",
+        email: "Please enter a valid email address"
+      },
+      password: {
+        required: "Please provide a password",
+        minlength: "Your password must be at least 5 characters long"
+      },
+      terms: "Please accept our terms"
+    },
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      error.addClass('invalid-feedback');
+      element.closest('.form-group').append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass('is-invalid');
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass('is-invalid');
+    }
+  });
+});
+    </script>
 </html>

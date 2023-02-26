@@ -1,12 +1,16 @@
 @extends('layouts.dashboard')
 @section('content')
-<div class="card ml-2" style="width: 18rem;">
+@foreach($prod as $prod)
+<div class="card ml-2" style="width: 30rem;">
     <img src="" class="card-img-top" >
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <strong><h2 class="" >{{$prod->nama}}</h2></strong>
+      <br>
+      <p><img src="/image/{{$prod->img}}" alt="" width="70%" height="60%"></p>
+      <h3>Rp. {{$prod->harga}}</h3>
+      <p class="card-text">{{$prod->deskripsi}}</p>
+      <a href="#" class="btn btn-primary">Detail</a>
     </div>
 </div>
-
+@endforeach
 @endsection
